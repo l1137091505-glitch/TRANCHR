@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="sharp" data-buttons="arrow" data-motion>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="site-kind" content="software" />
+  <meta name="page-type" content="software" />
+  <title>TRANCHR — invoice batch settlement on BOT Chain</title>
+  <meta name="description" content="Prepare, approve, settle, and verify up to ten invoice-linked demo transfers as one atomic BOT Chain batch." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TRANCHR — invoice batch settlement on BOT Chain" />
+  <meta property="og:description" content="One operational workspace for atomic demo payouts and public receipt verification." />
+  <meta property="og:image" content="/share.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0a0d14" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,400..600&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/system.css" />
+  <link rel="stylesheet" href="/assets/ui/cards.css" />
+  <link rel="stylesheet" href="/assets/ui/base.css" />
+  <link rel="stylesheet" href="/assets/motion/motion.css" />
+  <link rel="stylesheet" href="/assets/backgrounds/backgrounds.css" />
+  <link rel="stylesheet" href="/assets/layout/layout.css" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <style>
+    :root {
+      --p-bg: #0a0d14; --p-surface: #131824; --p-ink: #e9edf3; --p-muted: #8891a1;
+      --p-accent: #5ab9fc; --p-accent-ink: #0a0d14; --p-action: #5ab9fc; --p-action-ink: #0a0d14;
+      --p-inv-bg: #e9edf3; --p-inv-surface: #d7dbe1; --p-inv-ink: #0a0d14; --p-inv-muted: #54575f;
+      --p-inv-accent: #0a0d14; --p-inv-accent-ink: #e9edf3; --p-inv-action: #0a0d14; --p-inv-action-ink: #e9edf3;
+      --font-display: "Mona Sans", system-ui, sans-serif;
+      --font-text: "Mona Sans", system-ui, sans-serif;
+      --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      --display-weight: 500; --display-tracking: -0.03em; --display-tracking-xl: -0.04em;
+      --display-stretch: 104%; --ly-scale: 0.96;
+    }
+  </style>
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+  <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+  <link rel="modulepreload" href="/assets/moments/moments.js" />
+  <link rel="modulepreload" href="/assets/moments/lib.js" />
+  <link rel="modulepreload" href="/assets/moments/cursor-spotlight/moment.js" />
+</head>
+<body>
+  <!-- deal: collage hero; blue-black-cornflower; Mona Sans + Geist Mono; nav-cards; close-type; footer-dark; surface-pairs; arrow buttons; stack mark; cursor-spotlight in the hero -->
+  <header class="nav site-nav">
+    <div class="wrap nav__bar">
+      <a class="skip-link" href="#top">Skip to content</a>
+      <a class="nav__logo" href="#top"><span class="brand-stack" aria-hidden="true"><i></i><i></i><i></i></span>TRANCHR</a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a class="nav__link" href="#workspace">Workspace</a>
+        <a class="nav__link" href="#proof">Proof</a>
+        <a class="nav__link" href="#protocol">Protocol</a>
+        <a class="nav__link" href="#safety">Safety</a>
+      </nav>
+      <div class="nav__actions">
+        <span class="network-chip"><i></i> BOT Chain · 677</span>
+        <button class="btn btn--primary wallet-button" id="walletButton" type="button">Connect a wallet</button>
+      </div>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Open navigation"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero hero--collage" data-enter aria-labelledby="heroTitle">
+      <div class="wrap"><div class="hero-text grid hero__grid">
+        <div class="hero__text span-5">
+          <p class="eyebrow">Atomic demo payouts · BOT Chain</p>
+          <h1 id="heroTitle">Invoice batch settlement for BOT Chain operators.</h1>
+          <p class="hero__lead">Prepare up to 10 invoice-linked demo transfers. Every transfer settles together, or the whole batch reverts.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#workspace">Prepare a batch <svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            <a class="btn btn--secondary" href="#proof">Verify a receipt</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Network</dt><dd>BOT Chain · 677</dd></div>
+            <div><dt>Batch limit</dt><dd>10 invoices</dd></div>
+            <div><dt>Asset</dt><dd>TRCH demo credit</dd></div>
+          </dl>
+        </div>
+        <div class="hero__art span-6 start-7" data-moment="cursor-spotlight" role="img" aria-label="A TRANCHR payment run with four invoices ready for review">
+          <div class="ly-piece ly-piece--main demo-window" aria-hidden="true">
+            <div class="demo-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>Run 0084 · review</span><span class="demo-state">Ready</span></div>
+            <div class="demo-body">
+              <aside><b>TR</b><span class="is-on">Run</span><span>Proof</span><span>History</span></aside>
+              <div class="demo-main">
+                <div class="demo-heading"><div><small>PAYMENT RUN</small><strong>Four invoices</strong></div><span>382.50 TRCH</span></div>
+                <div class="demo-table-head"><span>Invoice</span><span>Recipient</span><span>Amount</span><span>Status</span></div>
+                <div class="demo-row"><span>#4081</span><code>0x74D2…19B0</code><span>120.00</span><b>Ready</b></div>
+                <div class="demo-row"><span>#4082</span><code>0xF031…8A66</code><span>84.50</span><b>Ready</b></div>
+                <div class="demo-row"><span>#4083</span><code>0x2C8E…A910</code><span>96.00</span><b>Ready</b></div>
+                <div class="demo-row"><span>#4084</span><code>0xB90A…40F2</code><span>82.00</span><b>Ready</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="ly-piece ly-piece--note result-card" aria-hidden="true">
+            <span class="result-kicker">ATOMIC CHECK</span>
+            <strong>4 / 4 ready</strong>
+            <span>One approval · one settlement</span>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="section workspace-section" id="workspace" aria-labelledby="workspaceTitle" style="--h: 2">
+      <div class="wrap">
+        <div class="section-head grid">
+          <div class="span-5"><p class="eyebrow">01 · PAYMENT RUN</p><h2 id="workspaceTitle">Build the payment run.</h2></div>
+          <p class="span-6 start-7 section-lead">Each row needs an invoice reference, a recipient, and an amount. Private notes are hashed before settlement and never sent as plain text.</p>
+        </div>
+
+        <div class="system-notice" id="previewNotice" hidden><strong>Preview mode.</strong><span>Deploy the contract and set <code>VITE_TRANCHR_ADDRESS</code> before sending transactions.</span></div>
+        <div class="workspace-shell">
+          <div class="workspace-topbar">
+            <div><span class="run-index">RUN / DRAFT</span><strong id="runTitle">Untitled payment run</strong></div>
+            <div class="topbar-actions">
+              <input type="file" id="csvInput" accept=".csv,text/csv" hidden />
+              <button class="text-action" id="importCsv" type="button">Import a CSV</button>
+              <button class="text-action" id="downloadCsv" type="button">Download the template</button>
+              <button class="btn btn--secondary" id="addRow" type="button">Add an invoice</button>
+            </div>
+          </div>
+
+          <div class="workspace-grid">
+            <div class="invoice-editor">
+              <div class="invoice-head"><span>#</span><span>Invoice reference</span><span>Recipient address</span><span>Amount in TRCH</span><span>Private note</span><span></span></div>
+              <div id="invoiceRows" class="invoice-rows"></div>
+              <button class="add-line" id="addRowBottom" type="button">＋ Add another invoice</button>
+            </div>
+
+            <aside class="review-rail" aria-label="Batch review">
+              <div class="review-head"><span>BATCH REVIEW</span><span id="reviewState">Draft</span></div>
+              <dl class="review-stats">
+                <div><dt>Invoices</dt><dd id="invoiceCount">1 / 10</dd></div>
+                <div><dt>Batch total</dt><dd id="batchTotal">0.00 TRCH</dd></div>
+                <div><dt>Wallet balance</dt><dd id="walletBalance">—</dd></div>
+                <div><dt>Allowance</dt><dd id="walletAllowance">—</dd></div>
+              </dl>
+              <div class="readiness">
+                <span>READINESS</span>
+                <ul id="readinessList">
+                  <li data-check="recipient">Valid recipients</li>
+                  <li data-check="amount">Positive amounts</li>
+                  <li data-check="invoice">Unique invoices</li>
+                  <li data-check="balance">Sufficient balance</li>
+                </ul>
+              </div>
+              <div class="wallet-tools">
+                <button class="btn btn--secondary" id="claimButton" type="button">Claim demo credits</button>
+                <button class="btn btn--secondary" id="approveButton" type="button">Approve the total</button>
+                <button class="btn btn--primary" id="settleButton" type="button">Settle the batch</button>
+              </div>
+              <p class="microcopy">Approval and settlement are separate wallet confirmations. TRANCHR requests only the current batch total.</p>
+            </aside>
+          </div>
+        </div>
+        <div class="status-line" id="statusLine" role="status" aria-live="polite">Draft saved on this device.</div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="proof" aria-labelledby="proofTitle">
+      <div class="wrap proof-layout">
+        <div class="proof-copy">
+          <h2 id="proofTitle">Verify a settlement without a wallet.</h2>
+          <p>Paste a transaction hash. TRANCHR reads the BOT Chain receipt, confirms the contract, and reconstructs every invoice event.</p>
+          <div class="hash-form">
+            <label for="txHash">Transaction hash</label>
+            <div><input id="txHash" type="text" spellcheck="false" placeholder="0x…" /><button class="btn btn--primary" id="verifyButton" type="button">Verify the receipt</button></div>
+          </div>
+          <button class="text-action export-action" id="exportReceipt" type="button" disabled>Export verified JSON</button>
+        </div>
+        <div class="proof-ledger" id="proofLedger">
+          <div class="ledger-head"><span>VERIFICATION LEDGER</span><span id="proofBadge">Awaiting hash</span></div>
+          <dl>
+            <div><dt>Network</dt><dd id="proofNetwork">BOT Chain · 677</dd></div>
+            <div><dt>Contract</dt><dd id="proofContract">—</dd></div>
+            <div><dt>Payer</dt><dd id="proofPayer">—</dd></div>
+            <div><dt>Block</dt><dd id="proofBlock">—</dd></div>
+            <div><dt>Batch total</dt><dd id="proofTotal">—</dd></div>
+            <div><dt>Invoice events</dt><dd id="proofCount">—</dd></div>
+            <div><dt>Transaction status</dt><dd id="proofStatus">—</dd></div>
+          </dl>
+          <div id="proofEvents" class="proof-events"><span>No receipt loaded.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section protocol-section" id="protocol" aria-labelledby="protocolTitle">
+      <div class="wrap">
+        <div class="section-head"><h2 id="protocolTitle">Three checks before the receipt.</h2></div>
+        <div class="protocol-steps">
+          <article><span>01</span><h3>Prepare the rows</h3><p>The browser validates every address and keeps the draft on this device.</p><div class="step-line"><i></i><b>Local draft</b></div></article>
+          <article><span>02</span><h3>Approve the total</h3><p>The wallet grants the contract only the exact amount in the current batch.</p><div class="step-line"><i></i><b>Exact allowance</b></div></article>
+          <article><span>03</span><h3>Settle every invoice</h3><p>The contract moves all demo credits atomically and emits public evidence.</p><div class="step-line"><i></i><b>Public receipt</b></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer closing footer--dark" id="safety" aria-labelledby="safetyTitle">
+    <div class="wrap">
+      <div class="closing__cta close--type">
+        <h2 id="safetyTitle">Review the batch in your wallet.</h2>
+        <p class="footer-warning">TRCH has no cash value, no fiat peg, and no redemption promise. BOT Chain gas uses real BOT. The contract is experimental and unaudited.</p>
+        <a class="btn btn--primary btn--xl btn--wide" href="#workspace">Prepare a batch <svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <div class="closing__links footer-grid">
+        <div class="footer-brand"><a class="nav__logo" href="#top"><span class="brand-stack" aria-hidden="true"><i></i><i></i><i></i></span>TRANCHR</a><p>Atomic demo settlement for invoice operators.</p></div>
+        <div class="footer__col"><h4>Workspace</h4><ul><li><a href="#workspace">Payment run</a></li><li><a href="#proof">Receipt proof</a></li></ul></div>
+        <div class="footer__col"><h4>Network</h4><ul><li><a href="https://scan.botchain.ai" target="_blank" rel="noreferrer">Block explorer</a></li><li><button class="footer-link" id="copyContract" type="button">Copy contract</button></li></ul></div>
+        <div class="footer__col"><h4>Contract</h4><ul><li><span id="footerContract">Not configured</span></li><li><span>Solidity 0.8.24</span></li></ul></div>
+      </div>
+      <div class="footer__legal"><span>© 2026 TRANCHR</span><span>BOT Chain Mainnet · 677</span><span>Use small test amounts.</span></div>
+    </div>
+  </footer>
+
+  <dialog id="walletDialog" class="wallet-dialog" aria-labelledby="walletDialogTitle">
+    <form method="dialog">
+      <div class="dialog-head"><div><span>WALLET ACCESS</span><h2 id="walletDialogTitle">Choose a wallet.</h2></div><button value="cancel" aria-label="Close wallet picker">×</button></div>
+      <p>TRANCHR requests account access only after you choose a provider. It never asks for a seed phrase or private key.</p>
+      <div id="walletOptions" class="wallet-options"></div>
+      <a class="mobile-wallet-link" id="mobileWalletLink" href="#">Open this page in MetaMask</a>
+    </form>
+  </dialog>
+
+  <template id="invoiceRowTemplate">
+    <div class="invoice-row">
+      <span class="row-number"></span>
+      <label><span>Invoice reference</span><input class="invoice-id" type="text" inputmode="numeric" placeholder="4081" /></label>
+      <label><span>Recipient address</span><input class="recipient" type="text" spellcheck="false" placeholder="0x…" /></label>
+      <label><span>Amount in TRCH</span><input class="amount" type="number" min="0" step="0.000001" placeholder="0.00" /></label>
+      <label><span>Private note</span><input class="note" type="text" maxlength="160" placeholder="Local note" /></label>
+      <button class="remove-row" type="button" aria-label="Remove invoice">×</button>
+    </div>
+  </template>
+
+  <script type="module" src="/assets/system.js"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
